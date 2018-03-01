@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use DB;
+use App\Quotation;
+use View;
+class listingRetrieve extends Controller
+{
+  public function collect()
+  {
+    $results=DB::table('marketListings')->get();
+    $resultsCed = count($results);
+
+    if ($resultsCed == 0){
+    $noGo="There are currently no listings right now.";
+    }
+    else{
+   $testOk="Listings go here";
+    }
+  }
+  
+}
+?>
+
+<html>
+<body>
+
+<h1>Welcome to Caged Carrot</h1>
+<h2>A private craigslist</h2>
+<a href'/createListing'>Create Listing</a>
+</body>
+</html>
